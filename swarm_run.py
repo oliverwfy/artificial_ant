@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # simulation times
-simulation_times = 1
+simulation_times = 100
 # font size
 size = 13
 
