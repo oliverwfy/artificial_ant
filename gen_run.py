@@ -6,7 +6,11 @@ import numpy as np
 
 random.seed(78)
 
+# number of ants in population
 n_ants = 500
+
+# fig file
+file_name = 'fig/'
 
 with open("santafe_trail.txt") as trail_file:
     ant.parse_matrix(trail_file)
@@ -48,11 +52,11 @@ fit_min = logbook.select("min")
 plt.plot(gen, fit_avg, gen, fit_max)
 
 
-plt.xlabel("generetion")
-plt.ylabel("pieces of food")
-plt.legend(['average', 'maximum'])
-plt.title('Fitness against Generation')
-plt.savefig('food_ag_gen.png')
+plt.xlabel("generetion", fontsize=13)
+plt.ylabel("pieces of food", fontsize=13)
+plt.legend(['average', 'maximum'], fontsize=13)
+
+plt.savefig(file_name+'food_ag_gen.png')
 
 nodes, edges, labels = gp.graph(best_ant)
 
@@ -81,5 +85,5 @@ nx.draw_networkx_nodes(g, pos, nodelist=idx_term, node_shape="o", node_color='No
 
 nx.draw_networkx_edges(g, pos)
 nx.draw_networkx_labels(g, pos, labels, font_size=30)
-plt.savefig('tree_best_ant.png')
+plt.savefig(file_name+'tree_best_ant.png')
 plt.show()
