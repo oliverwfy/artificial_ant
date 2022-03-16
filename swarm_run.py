@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # simulation times
 simulation_times = 100
 # font size
-size = 13
+size = 15
 
 file_name = 'fig/'
 
