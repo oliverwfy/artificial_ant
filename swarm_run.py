@@ -43,7 +43,7 @@ plt.savefig(file_name + 'v1_time.png')
 plt.figure()
 plt.errorbar(pop_n, movement_rand_mean, movement_rand_std, ecolor='lightgray', elinewidth=2, capsize=1)
 plt.xlabel('number of agents', fontsize=size)
-plt.ylabel('movement to reach convergence', fontsize=size)
+plt.ylabel('effort for convergence', fontsize=size)
 plt.legend(['p ~ Uni(0, 0.5)'], fontsize=size)
 
 plt.savefig(file_name + 'v1_movement.png')
@@ -97,7 +97,7 @@ plt.plot(pop_n, movement_rand_mean)
 legend = ['p = '+ str(round(p, 2)) for p in prob_ls]
 plt.xlabel('number of agents', fontsize=size)
 plt.legend(legend+['p~Uni(0,0.5)'], fontsize=size)
-plt.ylabel('movement to reach convergence', fontsize=size)
+plt.ylabel('effort for convergence', fontsize=size)
 
 
 plt.savefig(file_name + 'v1_movement_p.png')
@@ -149,7 +149,7 @@ plt.plot(pool_len_ls, movement_rand_mean)
 plt.plot(pool_len_ls, movement_ls)
 
 plt.xlabel('number of agents', fontsize=size)
-plt.ylabel('movement to reach convergence', fontsize=size)
+plt.ylabel('effort convergence', fontsize=size)
 plt.legend(['V1', 'V2'], fontsize=size)
 
 print('Random Walk V1\nThe minimum movement to find all pieces of food is \n {}'.format(int(np.min(movement_rand_mean))))
