@@ -149,7 +149,7 @@ plt.plot(pool_len_ls, movement_rand_mean)
 plt.plot(pool_len_ls, movement_ls)
 
 plt.xlabel('number of agents', fontsize=size)
-plt.ylabel('effort convergence', fontsize=size)
+plt.ylabel('effort for convergence', fontsize=size)
 plt.legend(['V1', 'V2'], fontsize=size)
 
 print('Random Walk V1\nThe minimum movement to find all pieces of food is \n {}'.format(int(np.min(movement_rand_mean))))
@@ -160,30 +160,30 @@ plt.savefig(file_name + 'v2_movement.png')
 
 
 
-# # define the number of ants at beginning
-# start_n = np.arange(1, 10, 2)
-#
-# time_step_ls = []
-# pool_len_ls = []
-# movement_ls = []
-#
-#
-# for init_n in start_n:
-#     time_step, pool_len, movement = random_walk_v2(start_n=init_n, simulation_times=simulation_times)
-#     time_step_ls.append(time_step)
-#     movement_ls.append(movement)
-#     pool_len_ls.append(pool_len)
-#
-# fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15,15))
-# plt.subplots_adjust(top = 0.9, bottom=0.1, hspace=0.6, wspace=0.2)
-#
-# ax1.plot(start_n, time_step_ls)
-#
-# ax1.set_xlabel('number of ants at beginning', fontsize=size)
-# ax1.set_ylabel('convergence time', fontsize=size)
-#
-# ax2.plot(start_n, movement_ls)
-# ax2.set_xlabel('number of ants at beginning', fontsize=size)
-# ax2.set_ylabel('movement to reach convergence', fontsize=size)
-#
-# plt.savefig(file_name + 'init_n.png')
+# define the number of ants at beginning
+start_n = np.arange(1, 10, 2)
+
+time_step_ls = []
+pool_len_ls = []
+movement_ls = []
+
+
+for init_n in start_n:
+    time_step, pool_len, movement = random_walk_v2(start_n=init_n, simulation_times=simulation_times)
+    time_step_ls.append(time_step)
+    movement_ls.append(movement)
+    pool_len_ls.append(pool_len)
+
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15,15))
+plt.subplots_adjust(top = 0.9, bottom=0.1, hspace=0.6, wspace=0.2)
+
+ax1.plot(start_n, time_step_ls)
+
+ax1.set_xlabel('number of ants at beginning', fontsize=size)
+ax1.set_ylabel('convergence time', fontsize=size)
+
+ax2.plot(start_n, movement_ls)
+ax2.set_xlabel('number of ants at beginning', fontsize=size)
+ax2.set_ylabel('movement to reach convergence', fontsize=size)
+
+plt.savefig(file_name + 'init_n.png')
